@@ -1,0 +1,237 @@
+/**index.wxss**/
+@import "../../font/iconfont.wxss";
+
+page {
+  width: 100%;
+  min-height: 100vh;
+  background: #eee;
+}
+
+.main_header {
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+}
+
+.main_header swiper {
+  height: 450rpx;
+  width: 100%;
+}
+
+.main_header swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+.main_header .text {
+  position: absolute;
+  font-size: 30rpx;
+  top: 2%;
+  left: 2%;
+  color: #fff;
+  padding: 10rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10rpx;
+}
+
+.text_body {
+  width: 100%;
+}
+
+.text_body swiper {
+  width: 86%;
+  height: 50rpx;
+}
+
+.guang {
+  position: absolute;
+  padding: 10rpx 20rpx;
+  top: 8%;
+  left: 2%;
+  z-index: 11;
+  color: #fff;
+  font-size: 28rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10rpx;
+}
+.advert image {
+  height: 188rpx;
+  width: 100%;
+}
+
+.lazy {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.iconfont {
+  font-size: 40rpx;
+}
+
+.iconfont.icon-gonggao {
+  color: #f50;
+}
+
+.quick_item {
+  width: 25%;
+  margin-bottom: 20rpx;
+}
+
+.icon_item image {
+  border-radius: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.quick_body, .text_body {
+  padding: 20rpx 0;
+}
+
+.quick_body {
+  flex-wrap: wrap;
+  border-radius: 20rpx;
+  margin: 10rpx;
+}
+
+.special_column .iconfont.left {
+  color: #ea5d34;
+}
+.tool_icon .image {
+  height: 80rpx;
+  width: 80rpx;
+  position: fixed;
+}
+
+.tool_icon .kefu {
+  height: 80rpx;
+  width: 80rpx;
+  overflow: hidden;
+  position: fixed;
+}
+
+.tool_icon image.img-plus-style {
+  bottom: 10px;
+  right: 15px;
+  z-index: 100;
+}
+
+.img-style {
+  bottom: 100rpx;
+  right: 30px;
+  opacity: 0;
+}
+
+.details_btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.img_li {
+  width: 100%;
+  height: 100%;
+}
+
+.redrnvelopes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.red_shu {
+  width: 1px;
+  height: 200rpx;
+  background: #fff;
+}
+
+.red_img {
+  width: 70%;
+  height: 650rpx;
+  position: relative;
+}
+
+.red_img image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.red_iocn {
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  margin-top: 40rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.goRedrnvelopes {
+  position: absolute;
+  width: 100%;
+  height: 100rpx;
+  bottom: 50rpx;
+  left: 0;
+}
+
+.t_text {
+  border-bottom: 2px solid #000;
+}
+
+.searchBox {
+  border: 1px solid rgb(122, 122, 122);
+  border-radius: 10rpx;
+  padding: 8rpx 20rpx;
+}
+
+.searchBox input {
+  width: 90%;
+}
+
+.arrow {
+  width: 46rpx;
+  height: 46rpx;
+}
+.pin{
+  border-radius: 10rpx;
+  border: 1px solid #ea5d34;
+  padding: 0 10rpx;
+  width: 80rpx;
+  text-align: center;
+}
+.collage_right{
+  width: 70%;
+}
+.todetails{
+  padding: 5rpx 20rpx;
+  background: #2FAEFD;
+  border-radius: 10rpx;
+}
+.secBody{
+  margin: 0 10rpx;
+}
+.secKillItem{
+  width:49%;
+}
+.sec_pa{
+  position: absolute;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  width: 100%;
+  top: 40%;
+  background: rgba(154, 108, 240, 0.6)
+}
+.b_ff3{
+  padding: 5rpx 15rpx;
+  background: #FF3636;
+}

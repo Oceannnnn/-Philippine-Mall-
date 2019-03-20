@@ -1,0 +1,162 @@
+<!--index.wxml-->
+<view class='main_header'>
+  <swiper indicator-dots interval="3000" duration="1000" autoplay='true' circular>
+    <block wx:for="{{imgUrls}}" wx:key="{{itemName}}" wx:for-item="itemName">
+      <swiper-item data-id="{{itemName.pro_id}}" data-type="0" bindtap='details'>
+        <image src="{{itemName.pic}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='flex_i quick_body bg_f'>
+  <navigator class='quick_item flex_af f_28 pr' url='../collage/collage'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item'>
+      <image src='{{nav_img.group}}'></image>
+    </view>
+    <text>拼团活动</text>
+  </navigator>
+  <view class='quick_item flex_af f_28 pr'>
+    <form report-submit='true' class='formBtn' data-ptime='{{ptime}}' bindsubmit='toSecKill'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item'>
+      <image src='{{nav_img.sec}}'></image>
+    </view>
+    <text>限时秒杀</text>
+  </view>
+  <navigator class='quick_item flex_af f_28 pr' url='../bargain/bargain'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item'>
+      <image src='{{nav_img.kan}}'></image>
+    </view>
+    <text>优惠砍价</text>
+  </navigator>
+  <view class='quick_item flex_af f_28 pr'>
+    <form report-submit='true' class='formBtn' bindsubmit='torecharge'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item'>
+      <image src='{{nav_img.one}}'></image>
+    </view>
+    <text>充值</text>
+  </view>
+  <view class='quick_item flex_af f_28 pr'>
+    <form report-submit='true' class='formBtn' data-type='1' bindsubmit='listPage'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item'>
+      <image src='{{nav_img.discount}}'></image>
+    </view>
+    <text>折扣商城</text>
+  </view>
+  <navigator class='quick_item flex_af f_28 pr' url='../consumer/consumer'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item'>
+      <image src='{{nav_img.quan}}'></image>
+    </view>
+    <text>优惠券</text>
+  </navigator>
+  <view class='quick_item flex_af f_28 pr'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindconfirm'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item'>
+      <image src='{{nav_img.day}}'></image>
+    </view>
+    <text>每日清仓</text>
+  </view>
+  <view class='quick_item flex_af f_28 pr'>
+    <form report-submit='true' class='formBtn' bindsubmit='listPage'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item'>
+      <image src='{{nav_img.dianqi}}'></image>
+    </view>
+    <text>电器商城</text>
+  </view>
+</view>
+<view class='mt_20 pr'>
+  <form report-submit='true' class='formBtn' data-ptime='{{ptime}}' bindsubmit='toSecKill'>
+    <button class='formBtn' form-type='submit'></button>
+  </form>
+  <image src='{{nav_img.sec_ad}}' class='w100' mode='widthFix'></image>
+</view>
+<view class='flex_cb secBody' wx:if="{{secList!=''}}">
+  <view wx:for="{{secList}}" wx:key="secList" class='secKillItem pr'>
+    <form report-submit='true' class='formBtn' data-id='{{item.pro_id}}' data-type='0' bindsubmit='details'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <image src='{{item.pic}}' class='w100' mode='widthFix'></image>
+    <view class='f_30 sec_pa c_f'>{{item.start_time}}开抢</view>
+    <view class='f_28 b_ff3'>
+      <view class='sheng'>{{item.name}}</view>
+      <view class='flex_cb c_f68'>
+        <view></view>
+        <view>秒杀价：
+          <text class='f_34 c_f'>{{item.price}}</text> 元</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='mt_20'>
+  <image src='{{nav_img.pinzhi}}' class='w100' mode='widthFix'></image>
+</view>
+<view class="bg_f">
+  <image src='{{nav_img.pin}}' class='w100 bor_b' mode='widthFix'></image>
+  <view wx:for="{{itemsList}}" wx:key="{{itemName}}" wx:for-item="itemName" class='item_list p_20 bor_b pr flex'>
+    <form report-submit='true' class='formBtn' data-id='{{itemName.pro_id}}' data-type='2' bindsubmit='details'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mr_20'>
+      <image class="lazy" src="{{itemName.pic}}" />
+    </view>
+    <view class='flex_fs collage_right'>
+      <view class='f_32'>
+        <view class='sheng2 mb_20'>{{itemName.name}}</view>
+        <view class='pin f_28 price'>{{itemName.num}}人拼</view>
+      </view>
+      <view>
+        <view class='f_28 price'>₱ {{itemName.peso}}</view>
+        <view class='flex_cb'>
+          <view class='flex_i f_28'>
+            <view class="price">￥
+              <text class='f_34'>{{itemName.price}}</text>
+            </view>
+            <view class="text_l c_999 ml_20" wx:if="{{itemName.old_price!=''}}">￥{{itemName.price}}</view>
+          </view>
+          <view class='todetails f_30 c_f'>我要参团</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<navigator class='w100 flex_faj c_999 f_30 p_20 bg_f pr' url='../collage/collage'>
+  <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+    <button class='formBtn' form-type='submit'></button>
+  </form>
+  <text class='bor_b'>查看更多>></text>
+</navigator>
+<view class='tool_icon'>
+  <image src="../../images/tool1.png" class="img-style image" animation="{{animCollect}}" bindtap="call"></image>
+  <view class="img-style kefu flex_faj" animation="{{animTranspond}}">
+    <image src="../../images/tool2.png" class='img_li'></image>
+    <button open-type="contact" class="details_btn"></button>
+  </view>
+  <image src="../../images/tool.png" class="img-plus-style image" animation="{{animPlus}}" bindtap="plus"></image>
+</view>
+<navigator class='flex_af f_28 p_40' url="../../pages/smallRoutine/smallRoutine">技术支持 @ 风擎网络科技</navigator>
+<view class='redrnvelopes flex_af' wx:if='{{redrnvelopesClose==1}}'>
+  <view class='red_shu'></view>
+  <view class='red_img'>
+    <image src='../../images/redrnvelopes.png'></image>
+    <view class='goRedrnvelopes' bindtap='consumer'></view>
+  </view>
+  <i class="iconfont icon-cha red_iocn" bindtap="redrnvelopesClose"></i>
+</view>
